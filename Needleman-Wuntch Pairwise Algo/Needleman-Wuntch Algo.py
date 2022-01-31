@@ -36,9 +36,11 @@ gap = -1
 for row in range(2, len(seq1)+2):
     matrix[row][0] = seq1[row-2]
     matrix[row][1] = matrix[row-1][1]+gap
+    tracebackmatrix[row][1] = "u"
 for column in range(2, len(seq2)+2):
     matrix[0][column] = seq2[column-2]
     matrix[1][column] = matrix[1][column-1]+gap
+    tracebackmatrix[1][column] = "l"
 def matrixprinter(mat):
     for row in mat:
         print(f"{row}")
